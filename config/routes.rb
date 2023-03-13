@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-
-  namespace :public do
-    get 'todos/new'
-    get 'todos/index'
-    get 'todos/show'
-    get 'todos/edit'
-  end
   root to: 'public/homes#top'
 
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
@@ -17,5 +10,8 @@ Rails.application.routes.draw do
     sessions: 'public/sessions'
   }
 
+  scope module: :public do
+    resources :todos
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
