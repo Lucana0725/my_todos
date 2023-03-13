@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  namespace :public do
+    get 'todos/new'
+    get 'todos/index'
+    get 'todos/show'
+    get 'todos/edit'
+  end
   root to: 'public/homes#top'
 
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
