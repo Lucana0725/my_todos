@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2023_03_12_090719) do
     t.string "nickname"
     t.string "last_name", null: false
     t.string "first_name", null: false
-    t.boolean "is_deleted", null: false
+    t.boolean "is_deleted", default: false, null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

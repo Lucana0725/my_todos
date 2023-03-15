@@ -11,6 +11,27 @@
   </head>
 
   <body>
+    <header>
+      <ul>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to 'Todo一覧', todos_path %>
+        </li>
+        <li>
+          <%= link_to 'New Todo', new_todo_path %>
+        </li>
+        <li>
+          <%= link_to 'My Page', user_path(current_user) %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            Log Out
+          <% end %>
+        </li>
+      <% end %>
+
+      </ul>
+    </header>
     <%= yield %>
   </body>
 </html>
