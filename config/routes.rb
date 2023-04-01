@@ -10,10 +10,11 @@ Rails.application.routes.draw do
     sessions: 'public/sessions'
   }
 
-  get 'users/unsubscribe' => 'public/users#unsubscribe', as: 'unsubscribe'
-  patch 'users/withdrawal' => 'public/users#withdrawal', as: 'withdrawal'
-
+  
   scope module: :public do
+    get 'users/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
+    patch 'users/withdrawal' => 'users#withdrawal', as: 'withdrawal'
+
     resources :users, only: [:show, :edit, :update]
     resources :todos
   end
