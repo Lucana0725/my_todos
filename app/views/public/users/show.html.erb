@@ -1,2 +1,32 @@
-<h1>Public::Users#show</h1>
-<p>Find me in app/views/public/users/show.html.erb</p>
+<h1>My Page</h1>
+
+<% if @user.is_deleted %>
+  <p>退会</p>
+<% else %>
+  <p>有効</p>
+<% end %>
+
+<div>
+   <%= @user.nickname %>
+</div>
+
+<div>
+  <table>
+    <tr>
+      <td>Todoの数：</td>
+    </tr>
+    <tr>
+      <td>完了済みTodo：</td>
+    </tr>
+    <tr>
+      <td>未完了Todo：</td>
+    </tr>
+    <tr>
+      <td>達成率：</td>
+    </tr>
+  </table>
+</div>
+
+<div>
+  <%= link_to "ユーザー情報編集", edit_user_path(current_user) %>
+</div>
