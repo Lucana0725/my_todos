@@ -13,9 +13,11 @@
     <%= f.text_area :body %>
   </div>
 
-  <!--<div>
-    <#%= f.label :importance, "重要度" %>
-    <#%= f.collection_select : %>
-  </div>-->
+  <div>
+    <%= f.label :importance, "重要度" %>
+    <%= f.select :importance, {'低':0, '中':1, '高':2} %>
+  </div>
+
+  <%= f.submit "作成！" %>
 
 <% end %>
