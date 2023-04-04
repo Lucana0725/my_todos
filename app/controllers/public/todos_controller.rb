@@ -4,9 +4,15 @@ class Public::TodosController < ApplicationController
   end
 
   def create
+    @todo = Todo.new(todo_params)
+    @todo.user_id = current_user.id
+    @todo.save
+    redirect_to todos_path
   end
 
   def index
+    @todos = Todo.all
+    @user = current_user
   end
 
   def show
