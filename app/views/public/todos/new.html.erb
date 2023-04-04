@@ -15,7 +15,9 @@
 
   <div>
     <%= f.label :importance, "重要度" %>
-    <%= f.select :importance, {'低':0, '中':1, '高':2} %>
+    <!--<%= f.select :importance, {'低':0, '中':1, '高':2} %>-->
+    <%= f.select :importance, Todo.importances.keys.map {|k| [I18n.t("enums.todo.importance.#{k}"), k]} %>
+    <!--<%= f.select :importance, Todo.importances_i18n.invert %>-->
   </div>
 
   <%= f.submit "作成！" %>

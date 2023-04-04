@@ -3,6 +3,9 @@
 <h1>Your Todos</h1>
 
 <% @todos.each do |todo| %>
-  <%= todo.title %>
-  <%= todo.body %>
+  <div>
+    <%= todo.title %>
+    <%= todo.body %>
+    <%= todo.importance_i18n %>
+  </div>
 <% end %>
