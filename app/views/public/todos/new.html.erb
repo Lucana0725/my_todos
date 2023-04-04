@@ -1,2 +1,21 @@
-<h1>Public::Todos#new</h1>
-<p>Find me in app/views/public/todos/new.html.erb</p>
+<%# <h1>Public::Todos#new</h1>
+<p>Find me in app/views/public/todos/new.html.erb</p> %>
+<h1>Create New Todo!</h1>
+
+<%= form_with model: @todo, url: todos_path, method: :post do |f| %>
+  <div>
+    <%= f.label :title, "タイトル" %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :body, "Todo内容" %>
+    <%= f.text_area :body %>
+  </div>
+
+  <!--<div>
+    <#%= f.label :importance, "重要度" %>
+    <#%= f.collection_select : %>
+  </div>-->
+
+<% end %>
