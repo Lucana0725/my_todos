@@ -4,5 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :todos, dependent: :destroy
+  has_many :todos, dependent: :destroy  # 子モデルTodo(1:NのN)に紐づくので複数形
 end

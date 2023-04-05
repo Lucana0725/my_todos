@@ -1,0 +1,7 @@
+ja:
+  enums:
+    todo:
+      importance:
+        low: "低"
+        medium: "中"
+        high: "高"

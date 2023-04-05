@@ -1,2 +1,11 @@
-<h1>Public::Todos#index</h1>
-<p>Find me in app/views/public/todos/index.html.erb</p>
+<%# <h1>Public::Todos#index</h1>
+<p>Find me in app/views/public/todos/index.html.erb</p> %>
+<h1>Your Todos</h1>
+
+<% @todos.each do |todo| %>
+  <div>
+    <%= todo.title %>
+    <%= todo.body %>
+    <%= todo.importance_i18n %>
+  </div>
+<% end %>
