@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     get 'users/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
     patch 'users/withdrawal' => 'users#withdrawal', as: 'withdrawal'
 
+    # patch 'todos/:id/check' => 'todos#check', as: 'check'  # public/todos/show.html.erbのチェックボックス更新用に作ったけどダメだった
+
     resources :users, only: [:show, :edit, :update]
     resources :todos
   end

@@ -22,7 +22,16 @@ class Public::TodosController < ApplicationController
   def edit
   end
 
+  # def check  # public/todos/show.html.erbのチェックボックス更新用に作ったけどダメだった
+  #   @todo = Todo.find(params[:id])
+  #   @todo.update(todo_params)
+  #   redirect_to todo_path(@todo.id)
+  # end
+
   def update
+    @todo = Todo.find(params[:id])
+    @todo.update(todo_params)
+    redirect_to todo_path(@todo.id)
   end
 
   def destroy

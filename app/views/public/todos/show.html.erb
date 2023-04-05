@@ -5,8 +5,12 @@
 </h1>
 
 <div>
-  <!--<%= check_box :todo, :is_done, url: todo_path(@todo.id), method: :patch %>-->
-  <%= check_box :todo, :is_done %>
+  <!--<%= check_box :todo, :is_done %>-->
+  <%= form_with model: @todo, url: todo_path(@todo.id), method: :patch do |f| %>
+    <%= f.label :is_done, "完了チェック" %>
+    <%= f.check_box :is_done %>
+    <%= f.submit "更新" %>
+  <% end %>
 </div>
 
 <div>
