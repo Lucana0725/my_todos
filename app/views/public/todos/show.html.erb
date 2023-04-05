@@ -1,8 +1,9 @@
 <%# <h1>Public::Todos#show</h1>
 <p>Find me in app/views/public/todos/show.html.erb</p> %>
-<h1>
-  <%= @todo.title %>
-</h1>
+<div>
+  <h1><%= @todo.title %></h1>
+  <%= link_to "削除", todo_path(@todo.id), method: :delete, data: {confirm: "このTodoを削除します。よろしいですか？"} %>
+</div>
 
 <div>
   <!--<%= check_box :todo, :is_done %>-->
@@ -16,3 +17,5 @@
 <div>
   <%= @todo.body %>
 </div>
+
+<%= link_to "Todoを編集", edit_todo_path(@todo.id) %>
