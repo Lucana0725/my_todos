@@ -1,2 +1,14 @@
-<h1>Public::Todos#show</h1>
-<p>Find me in app/views/public/todos/show.html.erb</p>
+<%# <h1>Public::Todos#show</h1>
+<p>Find me in app/views/public/todos/show.html.erb</p> %>
+<h1>
+  <%= @todo.title %>
+</h1>
+
+<div>
+  <!--<%= check_box :todo, :is_done, url: todo_path(@todo.id), method: :patch %>-->
+  <%= check_box :todo, :is_done %>
+</div>
+
+<div>
+  <%= @todo.body %>
+</div>
