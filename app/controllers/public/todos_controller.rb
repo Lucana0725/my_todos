@@ -20,6 +20,7 @@ class Public::TodosController < ApplicationController
   end
 
   def edit
+    @todo = Todo.find(params[:id])
   end
 
   # def check  # public/todos/show.html.erbのチェックボックス更新用に作ったけどダメだった

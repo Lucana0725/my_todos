@@ -1,5 +1,3 @@
-<%# <h1>Public::Todos#show</h1>
-<p>Find me in app/views/public/todos/show.html.erb</p> %>
 <div>
   <h1><%= @todo.title %></h1>
   <%= link_to "削除", todo_path(@todo.id), method: :delete, data: {confirm: "このTodoを削除します。よろしいですか？"} %>
@@ -16,6 +14,11 @@
 
 <div>
   <%= @todo.body %>
+</div>
+
+<div>
+  <p>重要度：</p>
+  <%= @todo.importance_i18n %>
 </div>
 
 <%= link_to "Todoを編集", edit_todo_path(@todo.id) %>
