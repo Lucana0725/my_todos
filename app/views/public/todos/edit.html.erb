@@ -1,2 +1,35 @@
-<h1>Public::Todos#edit</h1>
-<p>Find me in app/views/public/todos/edit.html.erb</p>
+<div>
+  <h1>Edit Todo</h1>
+</div>
+
+<div>
+  <%= form_with model: @todo, url: todo_path(@todo.id), method: :patch do |f| %>
+    <div>
+      <%= f.label :title, "Todoタイトル" %>
+      <%= f.text_field :title %>
+    </div>
+
+    <div>
+      <%= f.label :body, "Todo詳細" %>
+      <%= f.text_area :body %>
+    </div>
+
+    <div>
+      <%= f.label :importance, "重要度" %>
+      <%= f.select :importance, Todo.importances.keys.map {|k| [I18n.t("enums.todo.importance.#{k}"), k]} %>
+    </div>
+
+    <%= f.hidden_field :is_done, :value => 0 %>  <!-- "変更を保存"をすると、完了チェックが外れて未完了になるようにする -->
+
+    <div>
+      <p>※内容を変更すると、完了チェックは「未完了」に戻ります。ご注意ください。</p>
+    </div>
+
+    <div>
+      <%= f.submit "変更を保存" %>
+    </div>
+  <% end %>
+  <div>
+    <%= link_to "戻る", todo_path(@todo.id) %>
+  </div>
+</div>
