@@ -10,7 +10,7 @@
    <%= @user.nickname %>
 </div>
 
-<div>
+<%# <div>
   <table>
     <tr>
       <td>Todoの数：</td>
@@ -25,6 +25,24 @@
       <td>達成率：</td>
     </tr>
   </table>
+</div> %>
+<div>
+  <h3>Todo数：</h3>
+  <%= @todos.count %>
+</div>
+<div>
+  <h3>完了済みTodo数：</h3>
+  <%= @completed %>
+</div>
+
+<div>
+  <h3>未完了Todo数：</h3>
+  <%= @uncompleted %>
+</div>
+
+<div>
+  <h3>達成率：</h3>
+  <p><%= (@completed.to_f / @todos.count.to_f) * 100 %>%</p>  <!-- Rubyでは浮動小数点は.to_fにて指定しないと整数になる。(3 / 4 => 0.75ではなく0になる) -->
 </div>
 
 <div>

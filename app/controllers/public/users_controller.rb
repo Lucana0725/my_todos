@@ -1,6 +1,12 @@
 class Public::UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])  # idでユーザーを取得
+    # @user = User.find(params[:id])  # idでユーザーを取得
+    @user = current_user  # 他人の不正アクセスを防ぐ観点からid検索ではなくcurrent_user。
+    @todos = current_user.todos  # ログインユーザーのtodoを全て取得
+
+    @completed = @todos.where(is_done: 1).count  # is_doneが1(=>true)の@todosの数を拾ってくる。'true'でも動作可
+    # @uncompleted = @todos.where(is_done: 0).count  # @completedの反対。
+    @uncompleted = @todos.count - @completed
   end
 
   def edit
