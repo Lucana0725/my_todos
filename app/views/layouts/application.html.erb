@@ -13,6 +13,13 @@
   <body>
     <header>
       <ul>
+      <% if admin_signed_in? %>
+        <li>
+          <%= link_to destroy_admin_session_path, method: :delete do %>
+            Log Out
+          <% end %>
+        </li>
+      <% end %>
       <% if user_signed_in? %>
         <li>
           <%= link_to 'Todo一覧', todos_path %>
