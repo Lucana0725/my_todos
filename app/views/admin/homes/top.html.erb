@@ -9,6 +9,8 @@
   </div>
   <div>
     <%= user.id %>
-    <%= user.nickname %>
+    <%= link_to user_path(user.id) do %>
+      <%= user.nickname %>
+    <% end %>
   </div>
 <% end %>
