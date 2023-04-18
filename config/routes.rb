@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     sessions: 'public/sessions'
   }
 
+  get '/admin' => 'admin/homes#top', as: 'admin_top'
   
   scope module: :public do
     get 'users/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
