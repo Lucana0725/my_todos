@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
 
   # admin用ルーティング
-  scope module: :admin do
+  namespace :admin do
     resources :users, only: [:show, :edit, :update]
   end
   
