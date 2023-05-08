@@ -1,4 +1,6 @@
 class Admin::UsersController < ApplicationController
+before_action :move_to_user_signin
+
   def show
     @user = User.find(params[:id])
   end
