@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  # 管理者未ログイン時の遷移先をユーザーログインページへ設定
   def move_to_user_signin
     unless admin_signed_in?
       redirect_to new_user_session_path

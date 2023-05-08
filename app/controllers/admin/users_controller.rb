@@ -1,5 +1,5 @@
 class Admin::UsersController < ApplicationController
-before_action :move_to_user_signin
+  before_action :move_to_user_signin  # 管理者未ログイン時はユーザーログインページへ遷移させる
 
   def show
     @user = User.find(params[:id])
