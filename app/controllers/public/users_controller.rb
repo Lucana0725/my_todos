@@ -1,4 +1,6 @@
 class Public::UsersController < ApplicationController
+  before_action :move_to_user_signin  # ユーザー未ログイン時はユーザーログインページへ遷移させる
+
   def show
     # @user = User.find(params[:id])  # idでユーザーを取得
     @user = current_user  # 他人の不正アクセスを防ぐ観点からid検索ではなくcurrent_user。
