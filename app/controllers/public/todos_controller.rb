@@ -1,4 +1,6 @@
 class Public::TodosController < ApplicationController
+  before_action :move_to_user_signin
+
   def new
     @todo = Todo.new
   end
